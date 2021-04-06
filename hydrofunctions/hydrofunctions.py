@@ -283,8 +283,9 @@ def get_nwis(
 
     url = "https://waterservices.usgs.gov/nwis/"
     url = url + service + "/?"
+    print("Requested data from ", end="")
     response = requests.get(url, params=values, headers=header)
-    print("Requested data from", response.url)
+    print(response.url)
     # requests will raise a 'ConnectionError' if the connection is refused
     # or if we are disconnected from the internet.
 
